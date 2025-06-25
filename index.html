@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot by Vanshi</title>
+</head>
+<body>
+    <h1>Chatbot by Vanshi</h1>
+    <form onsubmit="return false;">
+        <label for="question">Hey, how can I help you:</label><br>
+        <input type="text" id="question" name="question"><br>
+        <button onclick="getResponse()">SEND</button><br>
+    </form>
+    <output id="responseArea"></output>
+
+    <script>
+        function getResponse() {
+            const userInput = document.getElementById('question').value.toLowerCase();
+            const responseArea = document.getElementById('responseArea');
+
+            let response = "Sorry, I didn't understand that.";
+
+            if (userInput.includes("hello") || userInput.includes("hi")) {
+                response = "Hello! How can I help you today?";
+            } else if (userInput.includes("your name")) {
+                response = "I'm Vanshi's chatbot!";
+            } else if (userInput.includes("how are you")) {
+                response = "I'm just code, but I'm running perfectly!";
+            }
+
+            responseArea.innerText = response;
+        }
+    </script>
+</body>
+</html>
